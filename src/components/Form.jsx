@@ -6,7 +6,8 @@ const Form = props => {
   console.log(props);
   let submitSuccess = props.state.length === 0 ? "" : "hidden";
   const dispatch = useDispatch();
-  const handleSubmit = () => {
+  const handleSubmit = e => {
+    e.prevent.default();
     dispatch(submitAction());
   };
   setTimeout(() => {
